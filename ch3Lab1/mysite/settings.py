@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -25,7 +26,8 @@ SECRET_KEY = 'django-insecure-&r&)-=b95(nb_4e!87)ee$5x6-jmuupu5yg9-8uh53k4im3n$s
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [] #서버에 접근할 호스트 입력하는 곳 / 서비스하려면 내 ip가 필수임
+#ALLOWED_HOSTS = [] #서버에 접근할 호스트 입력하는 곳 / 서비스하려면 내 ip가 필수임
+ALLOWED_HOSTS = ['192.168.0.102','localhost','127.0.0.1'] #변경
 
 
 # Application definition
@@ -56,6 +58,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [],
+        #'DIRS' : [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
