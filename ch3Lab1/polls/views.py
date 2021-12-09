@@ -6,7 +6,7 @@ from polls.models import Choice, Question
 
 def index(request):
     latest_question_list = Question.objects.all().order_by('-pub_date')[:5] #-pub_date : decrease로 5개만 가지고와
-    context = {'latest_question_list': latest_question_list} #받은 변수 저장
+    context = {'latest_question_list': latest_question_list} #받은 변수 저장 {key:value}
     return render(request, 'polls/index.html', context)
 
 def detail(request, question_id):
