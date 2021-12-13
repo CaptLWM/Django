@@ -24,7 +24,11 @@ urlpatterns = [
 
 from django.contrib import admin
 from django.urls import include, path
+from mysite import views # 추가
+
 urlpatterns = [
     path('polls/', include('polls.urls')),
     path('admin/', admin.site.urls),
+    path('books/', include('books.urls')),
+    path('', views.HomeView.as_view(), name='home'), # 추가
 ]
